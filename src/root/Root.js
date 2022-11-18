@@ -1,14 +1,9 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
-import Branches from '../components/Branches/Branches.jsx'
-import Catolog from '../components/Catalog/Catolog.jsx'
-import Categories from '../components/Categories/Categories.jsx'
-import Customers from '../components/Customers/Customers.jsx'
-import Orders from '../components/Orders/Orders.jsx'
-import Products from '../components/Products/Products.jsx'
-import Report from '../components/Report/Report.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from '../components/SideBar/Sidebar.jsx'
 import  SignIn  from '../components/SignIn/SignIn.jsx'
+import { RouterData } from '../datas/RouterData.js'
 
 export default function Root (){
   return (
@@ -16,13 +11,13 @@ export default function Root (){
       <Routes>
         <Route path="/" element={<SignIn/>} />
         <Route  element={<Sidebar/>}>
-           <Route path="/order" element={<Orders/>} />
-           <Route path='/products' element={<Products/>} />
-           <Route path='/categories' element={<Categories/>} />
-           <Route path='/branches' element={<Branches/>} />
-           <Route path='/customers' element={<Customers/>} />
-           <Route path='/report' element={<Report/>} />
-           <Route path='/catolog' element={<Catolog/>} />
+          {
+            RouterData.map(item => {
+              return(
+                <Route key={item.id} path={item.path} element={item.element} />
+              )
+            })
+          }
            </Route>
       </Routes>
     </div>

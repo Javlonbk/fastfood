@@ -1,9 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 body{
-    background-color:  #E5E5E5;
+    background-color:  #E5E5E5 !important;
     font-family: Arial, Helvetica, sans-serif;
 }
