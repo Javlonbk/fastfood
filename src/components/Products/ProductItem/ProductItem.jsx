@@ -1,8 +1,10 @@
 import React from 'react'
 import { Action } from '../../../buttons/Action'
+import AddNewProduct from '../../../Form/AddNewProduct'
+import ProductEditCanvas from '../../../offcanvas/ProductEditCanvas'
 import { ProductItemC } from './style'
 
-const ProductItem = ({deleteProduct, product, image, category, price, information}) => {
+const ProductItem = ({deleteProduct, editProduct,  editIndex, product, image, category, price, information}) => {
  
   return (
     <ProductItemC>
@@ -14,11 +16,12 @@ const ProductItem = ({deleteProduct, product, image, category, price, informatio
       <ProductItemC.Price>{price}</ProductItemC.Price>
       <ProductItemC.Info>{information}</ProductItemC.Info>
       <ProductItemC.Action>
-        <Action>
-          <Action.Edit/>
-        </Action>
-        <Action>
-          <Action.Trash onClick={deleteProduct} />
+        {/* <Action onClick={editProduct}>
+             <Action.Edit/>
+        </Action> */}
+        <ProductEditCanvas editProduct={editProduct} component={<AddNewProduct editIndex={editIndex} />} componentTitle={'Mahsulotni tahrirlash'} />
+        <Action onClick={deleteProduct}>
+          <Action.Trash />
         </Action>
       </ProductItemC.Action>
     </ProductItemC>

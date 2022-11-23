@@ -1,0 +1,33 @@
+.offcanvas.offcanvas-end {
+    top: 72px;
+    right: 0;
+    width: 365px;
+    box-shadow: 0px 20px 15px rgba(176, 177, 181, 0.551191);
+    padding-left: 20px;
+    padding-top: 25px;
+}
+.offcanvas-backdrop.show {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    margin-top: 70px;
+}
+.btn-close {
+    box-sizing: border-box;
+    width:50px;
+    height: 35px;
+    padding-left: 0px;
+    position: absolute;
+    left: -30px;
+    color: #000;
+    border: 0;
+    background-position: 10px;
+    background-size: 12px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+   opacity: 1;
+}
+.btn-close:hover{
+    background-color: #fff;
+    opacity: 1;
+    box-shadow: none;
+}

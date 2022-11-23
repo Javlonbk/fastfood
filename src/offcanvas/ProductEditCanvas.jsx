@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {AddBtn} from '../buttons/AddBtn';
-// import AddNewProduct from '../Form/AddNewProduct';
 import {ProductAddCanvasC} from './style.js'
 import './canvas.css'
+import { Action } from '../buttons/Action.js';
 
-export default function ProductAddCanvas({component, componentTitle}) {
+export default function ProductEditCanvas({editProduct ,component, componentTitle}) {
   function OffCanvasExample({name, ...props }) {
 
     const [show, setShow] = useState(false);
@@ -15,9 +14,9 @@ export default function ProductAddCanvas({component, componentTitle}) {
   
     return (
       <ProductAddCanvasC>
-          <AddBtn onClick={handleShow}>
-              <AddBtn.Plus/>
-          </AddBtn>
+           <Action onClick={() => {handleShow() ; editProduct()}}>
+             <Action.Edit/>
+           </Action>
         <Offcanvas  show={show} onHide={handleClose} {...props}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>{componentTitle}</Offcanvas.Title>
