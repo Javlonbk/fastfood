@@ -1,14 +1,15 @@
-import React from 'react'
-import { Action } from '../../../buttons/Action'
-import AddNewProduct from '../../../Form/AddNewProduct'
-import ProductEditCanvas from '../../../offcanvas/ProductEditCanvas'
-import { ProductItemC } from './style'
+import React from "react";
+import { Action } from "../../../buttons/Action";
+import AddNewProduct from "../../../Form/AddNewProduct";
+import ProductEditCanvas from "../../../offcanvas/ProductEditCanvas";
+import { ProductItemC } from "./style";
+import { useProduct } from "./../../../context/ProductContext";
 
-const ProductItem = ({deleteProduct, editProduct,  editIndex, product, image, category, price, information}) => {
- 
+const ProductItem = ({ id, product, image, category, price, information }) => {
+  const { deleteProduct } = useProduct();
   return (
     <ProductItemC>
-      <div style={{'display':'flex', 'alignItems':'baseline'}}>
+      <div style={{ display: "flex", alignItems: "baseline" }}>
         <ProductItemC.Image>{image}</ProductItemC.Image>
         <ProductItemC.Name>{product}</ProductItemC.Name>
       </div>
@@ -19,14 +20,16 @@ const ProductItem = ({deleteProduct, editProduct,  editIndex, product, image, ca
         {/* <Action onClick={editProduct}>
              <Action.Edit/>
         </Action> */}
-        <ProductEditCanvas editProduct={editProduct} component={<AddNewProduct editIndex={editIndex} />} componentTitle={'Mahsulotni tahrirlash'} />
-        <Action onClick={deleteProduct}>
+        <ProductEditCanvas
+          component={<AddNewProduct id={id} />}
+          componentTitle={"Mahsulotni tahrirlash"}
+        />
+        <Action onClick={() => deleteProduct(id)}>
           <Action.Trash />
         </Action>
       </ProductItemC.Action>
     </ProductItemC>
+  );
+};
 
-  )
-}
-
-export default ProductItem
+export default ProductItem;
