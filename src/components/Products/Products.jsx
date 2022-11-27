@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { ProductsData } from "../../datas/ProductsData";
+import React from "react";
 import ProductAddCanvas from "../../offcanvas/ProductAddCanvas";
 import ProductList from "./ProductList/ProductList";
 import { ProductsC } from "./style";
