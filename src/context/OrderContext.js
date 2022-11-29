@@ -9,11 +9,13 @@ export function useOrder() {
 const OrderProvider = ({children}) => {
     const [orders, setOrders] = useState(OrdersData);
 
+    // <-----delete the orders function----->
     function deleteOrder(id){
         const nextOrderList = orders.filter((order,index) => index !== id);
         setOrders(nextOrderList);
         console.log(nextOrderList)
     }
+    // <-----search the orders function----->
 
     return(
         <OrderContext.Provider value={{orders, deleteOrder}}>

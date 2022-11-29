@@ -12,7 +12,7 @@ export const SidebarC = styled.div `
 `
 SidebarC.Menus = styled.div`
   width:300px;
-  height:100vh;
+  min-height:100vh;
   box-sizing:border-box;
   background-color:#fff;
   padding:28px 0px;

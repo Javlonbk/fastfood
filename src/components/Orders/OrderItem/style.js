@@ -29,7 +29,17 @@ OrderItemC.Column = styled.div`
   color: #2D3A45;
   padding-left: 35px;
    
+  :nth-child(1){
+    width: 22%;
+  }
+  :nth-child(2){
+    width: 27%;
+  }
+  :nth-child(3){
+    width: 27%;
+  }
   :nth-child(4){
+    width: 23%;
    border: none;
   }
   .id{

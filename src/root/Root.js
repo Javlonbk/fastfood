@@ -4,10 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from '../components/SideBar/Sidebar.jsx'
 import  SignIn  from '../components/SignIn/SignIn.jsx'
 import { RouterData } from '../datas/RouterData.js'
+import { RootC } from './style.js';
 
 export default function Root (){
   return (
-    <div>
+    <RootC>
       <Routes>
         <Route path="/" element={<SignIn/>} />
         <Route  element={<Sidebar/>}>
@@ -20,6 +21,6 @@ export default function Root (){
           }
         </Route>
       </Routes>
-    </div>
+    </RootC>
   )
 }

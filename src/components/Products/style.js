@@ -27,6 +27,8 @@ ProductsC.Header = styled.div`
     width:100%;
     height: 70px;
     background-color: #fff;
+    display: flex;
+    align-items: center;
     `
 ProductsC.Add = styled.div`
    width: 200px;

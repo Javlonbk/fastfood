@@ -15,12 +15,22 @@ const DEFAUL_PRODUCT = {
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(productsExampleData);
 
+   // <-----search the product by name function----->
+   function searchProduct(value){
+     let findedProducts = productsExampleData.filter(product => {
+      return product.product.toLowerCase().includes(value.toLowerCase())
+    })
+    setProducts(findedProducts)
+   }
+
+  // <-----get the product's id function----->
   function getProductById(id) {
     const findedProduct = products.find((product) => product.id === id);
     if (!findedProduct) return DEFAUL_PRODUCT;
     return findedProduct;
   }
-
+   
+  // <-----add new product function----->
   function addProduct(newProduct) {
     // newProduct:{name,category,price,information}
     let newProductList = {
@@ -31,11 +41,13 @@ export const ProductProvider = ({ children }) => {
     setProducts([...products, newProductList]);
   }
 
+   // <-----delete the products function----->
   function deleteProduct(id) {
     const nextProductList = products.filter((product) => product.id !== id);
     setProducts(nextProductList);
   }
 
+   // <-----update the products function----->
   function updateProduct({ id, name, category, price, information }) {
     const currentProduct = products.find((product) => product.id === id);
     currentProduct.name = name;
@@ -53,6 +65,7 @@ export const ProductProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         products,
+        searchProduct,
         addProduct,
         deleteProduct,
         updateProduct,

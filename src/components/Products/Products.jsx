@@ -3,9 +3,13 @@ import ProductAddCanvas from "../../offcanvas/ProductAddCanvas";
 import ProductList from "./ProductList/ProductList";
 import { ProductsC } from "./style";
 import AddNewProduct from "../../Form/AddNewProduct.jsx";
+import { FilterComponent, SearchComponent } from "../../Form/SearchInput";
+import { useProduct } from "../../context/ProductContext";
 
 const Products = () => {
   const menu = ["Mahsulot", "kategoriya", "narxi", "qo`shimcha", "action"];
+  
+  const {searchProduct} = useProduct()
 
   return (
     <ProductsC>
@@ -19,6 +23,11 @@ const Products = () => {
           />
           <p>Yangi maxsulot qo’shish</p>
         </ProductsC.Add>
+        <SearchComponent>
+          <SearchComponent.SearchInput onChange={(e) => searchProduct(e.target.value)} placeholder="Qidirish" />
+          <SearchComponent.SearchIcon />
+        </SearchComponent>
+        <FilterComponent/>
       </ProductsC.Header>
       <ProductsC.Menu>
         {menu.map((item) => {
