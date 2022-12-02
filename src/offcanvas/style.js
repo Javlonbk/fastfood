@@ -1,2 +1,2 @@
 import styled from "styled-components";
-export const ProductAddCanvasC = styled.div``
+export const CanvasC = styled.div``

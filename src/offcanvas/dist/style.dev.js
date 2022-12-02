@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ProductsC = void 0;
+exports.CanvasC = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -21,6 +21,6 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ProductsC = _styledComponents["default"].div(_templateObject());
+var CanvasC = _styledComponents["default"].div(_templateObject());
 
-exports.ProductsC = ProductsC;
+exports.CanvasC = CanvasC;

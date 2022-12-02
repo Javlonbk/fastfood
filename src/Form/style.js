@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 
-export const AddNewProductC = styled.div`
+export const AddNew = styled.div`
    width: 100%;
    height: 100%;
    padding: 10px;

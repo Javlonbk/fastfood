@@ -48,7 +48,7 @@ export const ProductProvider = ({ children }) => {
   }
 
    // <-----update the products function----->
-  function updateProduct({ id, name, category, price, information }) {
+  function updateProduct({ id, name, category, price,        information }) {
     const currentProduct = products.find((product) => product.id === id);
     currentProduct.name = name;
     currentProduct.price = price;
@@ -65,11 +65,11 @@ export const ProductProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         products,
+        getProductById,
         searchProduct,
         addProduct,
         deleteProduct,
-        updateProduct,
-        getProductById,
+        updateProduct
       }}
     >
       {children}

@@ -13,7 +13,6 @@ const OrderList = () => {
             return <OrderItem key={index} {...order} deleteOrder={() => deleteOrder(index)} />
           })
         }
-         
        </OrderListC>
   )
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Action } from "../../../buttons/Action";
 import AddNewProduct from "../../../Form/AddNewProduct";
-import ProductEditCanvas from "../../../offcanvas/ProductEditCanvas";
+import EditCanvas from "../../../offcanvas/EditCanvas";
 import { ProductItemC } from "./style";
 import { useProduct } from "./../../../context/ProductContext";
 
@@ -17,10 +17,7 @@ const ProductItem = ({ id, product, image, category, price, information }) => {
       <ProductItemC.Price>{price}</ProductItemC.Price>
       <ProductItemC.Info>{information}</ProductItemC.Info>
       <ProductItemC.Action>
-        {/* <Action onClick={editProduct}>
-             <Action.Edit/>
-        </Action> */}
-        <ProductEditCanvas
+        <EditCanvas
           component={<AddNewProduct id={id} />}
           componentTitle={"Mahsulotni tahrirlash"}
         />

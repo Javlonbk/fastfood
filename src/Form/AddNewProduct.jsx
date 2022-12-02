@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AddNewProductC } from "./style";
+import { AddNew } from "./style";
 import { useProduct } from "./../context/ProductContext";
 
 const AddNewProduct = ({ id = undefined }) => {
@@ -18,7 +18,7 @@ const AddNewProduct = ({ id = undefined }) => {
     }));
   };
   return (
-    <AddNewProductC>
+    <AddNew>
       <label htmlFor="product">Maxsulot nomi</label>
       <input
         value={newProduct.product}
@@ -58,7 +58,7 @@ const AddNewProduct = ({ id = undefined }) => {
         type="text"
       />
       <button onClick={handleSubmit}>Saqlash</button>
-    </AddNewProductC>
+    </AddNew>
   );
 };
 

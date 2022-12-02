@@ -1,19 +1,22 @@
 import React from 'react'
-import ProductAddCanvas from '../../offcanvas/ProductAddCanvas'
+import AddCanvas from '../../offcanvas/AddCanvas'
+import { Container } from '../Conatainer'
 import OrderList from './OrderList/OrderList'
 import { OrderC } from './style'
 
 const Orders = () => {
   return (
-    <OrderC>
-        <OrderC.Header>
-         <OrderC.Add>
-           <ProductAddCanvas componentTitle={'Yangi buyurtma qo`shish '} />
+    <Container>
+      <OrderC>
+        <Container.Header>
+         <Container.Add>
+           <AddCanvas componentTitle={'Yangi buyurtma qo`shish '} />
              <p>Yangi buyurtma qo'shish</p>
-         </OrderC.Add>
-        </OrderC.Header>
+         </Container.Add>
+        </Container.Header>
         <OrderList/>
-    </OrderC>
+      </OrderC>
+    </Container>
   )
 }
 
