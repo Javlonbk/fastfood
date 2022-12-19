@@ -4,30 +4,29 @@ import { OrderItemC } from "./style";
 const OrderItem = ({changeTabValue ,deleteOrder,id, time, customerName, customerPhone, cost, deliveryCost, operator, branch}) => {
   return (
     <OrderItemC direction={changeTabValue}>
-      <OrderItemC.Column>
-        <div>
+      <OrderItemC.Column direction={changeTabValue}>
+        <div  className="container">
           <span className="id">{id}</span>
-          <OrderItemC.BookmarkIconDiv>
-            <OrderItemC.BookmarkIcon />
+          <OrderItemC.BookmarkIconDiv direction={changeTabValue}>
+            <OrderItemC.BookmarkIcon direction={changeTabValue} />
           </OrderItemC.BookmarkIconDiv>
         </div>
         <p className="time">
-          <OrderItemC.ClockIcon /> {time}
+          <OrderItemC.ClockIcon direction={changeTabValue}  /> {time}
         </p>
       </OrderItemC.Column>
-      <OrderItemC.Column>
-        <div>
+      <OrderItemC.Column direction={changeTabValue}>
+        <div className="customer">
           <OrderItemC.UserIcon />
-          <p className="customer">{customerName}</p>
+          <p >{customerName}</p>
         </div>
         <div className="phone">
-          <OrderItemC.PathIcon /> {customerPhone}
+          <OrderItemC.PathIcon direction={changeTabValue} /> {customerPhone}
         </div>
       </OrderItemC.Column>
-      <OrderItemC.Column>
+      <OrderItemC.Column direction={changeTabValue}>
         <div className="price">
           <OrderItemC.ClipboardIcon /><span>{cost}</span>
-
         </div>
         <div className="price">
           <OrderItemC.TruckIcon /><span>{deliveryCost}</span>
@@ -37,7 +36,7 @@ const OrderItem = ({changeTabValue ,deleteOrder,id, time, customerName, customer
           40,400 UZS
         </p>
       </OrderItemC.Column>
-      <OrderItemC.Column>
+      <OrderItemC.Column direction={changeTabValue}>
         <p className="operator">
           <span>Operator:</span>{operator}
         </p>
@@ -46,7 +45,7 @@ const OrderItem = ({changeTabValue ,deleteOrder,id, time, customerName, customer
         </p>
       </OrderItemC.Column>
 
-      <OrderItemC.Action deleter onClick={deleteOrder}>
+      <OrderItemC.Action direction={changeTabValue} deleter onClick={deleteOrder}>
         < OrderItemC.DeleteOrderIcon/>
       </OrderItemC.Action>
     
