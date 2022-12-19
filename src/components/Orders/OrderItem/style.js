@@ -11,39 +11,43 @@ import {ReactComponent as deleteOrder} from '../../../assets/icon/x.svg'
 import {ReactComponent as saveOrder} from '../../../assets/icon/tick.svg'
 
 export const OrderItemC = styled.div`
-   width: 100%;
-   height: 130px;
+   width: ${(props) => props.direction ? '230px' : '100%'};
+   height: ${(props) => props.direction ? 'auto' : '150px'};
    margin: 12px 0px;
    background-color: #fff;
    box-sizing: border-box;
    box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);
    border-radius: 6px;
    display: flex;
+   flex-direction: ${(props) => props.direction ? 'column' : null};
    position: relative;
 `
 OrderItemC.Column = styled.div`
-  border-right: 1px solid #EDEFF3;
-  width: 25%;
-  height: 100%;
+  border-right: ${(props) => !props.direction ? '1px solid #EDEFF3' : null};
+  border-top: ${(props) => props.direction ? '1px solid #EDEFF3' : null};
+  height: ${(props) => props.direction ? '100%' : 'auto'};
   padding: 15px 0px;
   color: #2D3A45;
-  padding-left: 35px;
-   
+  padding-left: ${(props) => props.direction ? '0px' : '35px'};
+  display: ${(props) => props.direction ? 'flex' : null};
+  border: 1px solid red;
+  
+  
   :nth-child(1){
-    width: 22%;
+    width: ${(props) => props.direction ? '100px' : '22%'};
   }
   :nth-child(2){
-    width: 27%;
+    width: ${(props) => props.direction ? '100%' : '27%'};
   }
   :nth-child(3){
-    width: 27%;
+    width: ${(props) => props.direction ? '100%' : '27%'};
   }
   :nth-child(4){
-    width: 23%;
+    width: ${(props) => props.direction ? '100%' : '27%'};
    border: none;
   }
   .id{
-    padding: 5px 12px;
+    padding: ${(props) => props.direction ? '0px' : '5px 12px'};
     background: #20D472;
     border-radius: 18px;
     letter-spacing: 0.6px;
@@ -61,7 +65,7 @@ OrderItemC.Column = styled.div`
     align-items: center;
   }
   .time{
-    margin-top: 30px;
+    margin-top: 30px; 
   }
   .customer{
     font-size: 18px;

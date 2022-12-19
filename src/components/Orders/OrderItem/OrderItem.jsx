@@ -1,12 +1,9 @@
 import React from "react";
 import { OrderItemC } from "./style";
 
-const OrderItem = ({deleteOrder,id, time, customerName, customerPhone, cost, deliveryCost, operator, branch}) => {
- 
-   
-
+const OrderItem = ({changeTabValue ,deleteOrder,id, time, customerName, customerPhone, cost, deliveryCost, operator, branch}) => {
   return (
-    <OrderItemC>
+    <OrderItemC direction={changeTabValue}>
       <OrderItemC.Column>
         <div>
           <span className="id">{id}</span>

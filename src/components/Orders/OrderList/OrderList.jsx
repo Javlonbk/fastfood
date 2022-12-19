@@ -4,13 +4,13 @@ import OrderItem from '../OrderItem/OrderItem'
 import { OrderListC } from './style'
 
 
-const OrderList = () => {
+const OrderList = ({changeTabValue}) => {
   const {orders, deleteOrder} = useOrder();
   return (
        <OrderListC>
         {
           orders.map((order, index) => {
-            return <OrderItem key={index} {...order} deleteOrder={() => deleteOrder(index)} />
+            return <OrderItem changeTabValue={changeTabValue} key={index} {...order} deleteOrder={() => deleteOrder(index)} />
           })
         }
        </OrderListC>

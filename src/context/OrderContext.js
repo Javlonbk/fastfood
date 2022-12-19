@@ -15,13 +15,17 @@ const OrderProvider = ({children}) => {
         setOrders(nextOrderList);
         console.log(nextOrderList)
     }
-    // <-----search the orders function----->
+    // // <-----change to vertical orders-items function----->
+    // function handleChangeToVertical() {
+        
+    // }
 
     return(
         <OrderContext.Provider value={{orders, deleteOrder}}>
             {children}
         </OrderContext.Provider>
     )
+
 
 }
 export default OrderProvider

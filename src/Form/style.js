@@ -52,5 +52,27 @@ export const AddNew = styled.div`
     bottom: 10px;
     left: 20px;
    }
+   .workingTime{
+    display: flex;
+    align-items: center;
+    input{
+        width: 80px;
+        height: 35px;
+        border: 1px solid #EDEFF3;
+        border-radius: 5px;
+        outline: none;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.4px;
+        color: #2D3A45;
+
+    }
+    .line{
+        width: 22px;
+        height: 1px;
+        opacity: 0.3;
+        border: 1px solid #979797;        
+    }
+   }
    
 ` 

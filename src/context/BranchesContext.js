@@ -9,7 +9,7 @@ export function useBranches(){
 const DEFAUL_Branches = {
     nameUz:'',
     nameRu:'', 
-    target:'-',
+    target:'',
     workingTime:''
 };
 
@@ -52,7 +52,6 @@ export const BranchesProvider = ({children}) => {
     currentBranches.nameRu = nameRu;
     currentBranches.target = target;
     currentBranches.workingTime = workingTime;
-
     const nextBranchesList = branches.map((Branches) => {
       if (Branches.id === id) return currentBranches;
       return Branches;

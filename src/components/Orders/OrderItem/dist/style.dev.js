@@ -126,7 +126,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  border-right: 1px solid #EDEFF3;\n  width: 25%;\n  height: 100%;\n  padding: 15px 0px;\n  color: #2D3A45;\n  padding-left: 35px;\n   \n  :nth-child(1){\n    width: 22%;\n  }\n  :nth-child(2){\n    width: 27%;\n  }\n  :nth-child(3){\n    width: 27%;\n  }\n  :nth-child(4){\n    width: 23%;\n   border: none;\n  }\n  .id{\n    padding: 5px 12px;\n    background: #20D472;\n    border-radius: 18px;\n    letter-spacing: 0.6px;\n    color: #FFFFFF;\n    font-size: 16px;\n  }\n  div{\n    display: flex;\n    /* align-items: center;  */\n  }\n  p{\n    font-size: 16px;\n    color: #2D3A45;\n    display: flex;\n    align-items: center;\n  }\n  .time{\n    margin-top: 30px;\n  }\n  .customer{\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 19px;\n  }\n  .phone{\n     font-size: 12px;\n     letter-spacing: 0.5px;\n     margin-top: 10px !important;\n  }\n  .price span{\n    margin-left: 10px;\n  }\n  .price{\n    margin-bottom: 10px;\n    display: flex;\n    align-items: center;\n     font-size: 12px;\n     letter-spacing: 0.5px;\n  }\n  .allPrice{\n    margin-top: 15px !important;\n    display: block;\n    font-size: 18px;\n    font-weight: bold;\n  }\n  .allPrice span, .operator span{\n    letter-spacing: 0.366667px;\n    color: #8D9BA8;\n    font-size: 11px;\n    display: block;\n    font-weight: normal;\n  }\n  .operator{\n    display: block;\n    font-size: 14px;\n    font-weight: bold;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  border-right: ", ";\n  border-top: ", ";\n  height: ", ";\n  padding: 15px 0px;\n  color: #2D3A45;\n  padding-left: ", ";\n  display: ", ";\n  border: 1px solid red;\n  \n  \n  :nth-child(1){\n    width: ", ";\n  }\n  :nth-child(2){\n    width: ", ";\n  }\n  :nth-child(3){\n    width: ", ";\n  }\n  :nth-child(4){\n    width: ", ";\n   border: none;\n  }\n  .id{\n    padding: ", ";\n    background: #20D472;\n    border-radius: 18px;\n    letter-spacing: 0.6px;\n    color: #FFFFFF;\n    font-size: 16px;\n  }\n  div{\n    display: flex;\n    /* align-items: center;  */\n  }\n  p{\n    font-size: 16px;\n    color: #2D3A45;\n    display: flex;\n    align-items: center;\n  }\n  .time{\n    margin-top: 30px; \n  }\n  .customer{\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 19px;\n  }\n  .phone{\n     font-size: 12px;\n     letter-spacing: 0.5px;\n     margin-top: 10px !important;\n  }\n  .price span{\n    margin-left: 10px;\n  }\n  .price{\n    margin-bottom: 10px;\n    display: flex;\n    align-items: center;\n     font-size: 12px;\n     letter-spacing: 0.5px;\n  }\n  .allPrice{\n    margin-top: 15px !important;\n    display: block;\n    font-size: 18px;\n    font-weight: bold;\n  }\n  .allPrice span, .operator span{\n    letter-spacing: 0.366667px;\n    color: #8D9BA8;\n    font-size: 11px;\n    display: block;\n    font-weight: normal;\n  }\n  .operator{\n    display: block;\n    font-size: 14px;\n    font-weight: bold;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -136,7 +136,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n   width: 100%;\n   height: 130px;\n   margin: 12px 0px;\n   background-color: #fff;\n   box-sizing: border-box;\n   box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);\n   border-radius: 6px;\n   display: flex;\n   position: relative;\n"]);
+  var data = _taggedTemplateLiteral(["\n   width: ", ";\n   height: ", ";\n   margin: 12px 0px;\n   background-color: #fff;\n   box-sizing: border-box;\n   box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);\n   border-radius: 6px;\n   display: flex;\n   flex-direction: ", ";\n   position: relative;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -147,10 +147,36 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var OrderItemC = _styledComponents["default"].div(_templateObject());
+var OrderItemC = _styledComponents["default"].div(_templateObject(), function (props) {
+  return props.direction ? '230px' : '100%';
+}, function (props) {
+  return props.direction ? 'auto' : '150px';
+}, function (props) {
+  return props.direction ? 'column' : null;
+});
 
 exports.OrderItemC = OrderItemC;
-OrderItemC.Column = _styledComponents["default"].div(_templateObject2());
+OrderItemC.Column = _styledComponents["default"].div(_templateObject2(), function (props) {
+  return !props.direction ? '1px solid #EDEFF3' : null;
+}, function (props) {
+  return props.direction ? '1px solid #EDEFF3' : null;
+}, function (props) {
+  return props.direction ? '100%' : 'auto';
+}, function (props) {
+  return props.direction ? '0px' : '35px';
+}, function (props) {
+  return props.direction ? 'flex' : null;
+}, function (props) {
+  return props.direction ? '100px' : '22%';
+}, function (props) {
+  return props.direction ? '100%' : '27%';
+}, function (props) {
+  return props.direction ? '100%' : '27%';
+}, function (props) {
+  return props.direction ? '100%' : '27%';
+}, function (props) {
+  return props.direction ? '0px' : '5px 12px';
+});
 OrderItemC.BookmarkIconDiv = _styledComponents["default"].div(_templateObject3());
 OrderItemC.BookmarkIcon = (0, _styledComponents["default"])(_bookmark.ReactComponent)(_templateObject4());
 OrderItemC.ClockIcon = (0, _styledComponents["default"])(_clock.ReactComponent)(_templateObject5());

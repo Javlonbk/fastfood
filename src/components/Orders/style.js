@@ -1,5 +1,6 @@
 // <-----Order------->
-
 import styled from "styled-components";
 
-export const OrderC  = styled.div``
+export const OrderC = styled.div ``
+
+
