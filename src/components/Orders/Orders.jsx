@@ -1,5 +1,5 @@
-
 import React, { useState } from "react";
+import AddNewOrder from "../../Form/AddNewOrder";
 import AddCanvas from "../../offcanvas/AddCanvas";
 import ControlStateTab from "../../tabs/ControlStateTab";
 import StatusTab from "../../tabs/StatusTab";
@@ -13,13 +13,13 @@ const Orders = () => {
   const handleChangeTab = (data) => {
     setChangeTab(data)
   }
-
+  
   return (
     <Container>
       <OrderC>
         <Container.Header>
           <Container.Add>
-            <AddCanvas componentTitle={"Yangi buyurtma qo`shish "} />
+            <AddCanvas    component={<AddNewOrder/>} componentTitle={"Yangi buyurtma qo`shish "} />
             <p>Yangi buyurtma qo'shish</p>
           </Container.Add>
           <StatusTab/>

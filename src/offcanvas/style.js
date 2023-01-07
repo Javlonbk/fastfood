@@ -1,2 +1,4 @@
 import styled from "styled-components";
-export const CanvasC = styled.div``
+export const CanvasC = styled.div`
+
+`;

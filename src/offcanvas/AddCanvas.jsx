@@ -13,7 +13,7 @@ export default function AddCanvas({component, componentTitle}) {
 
   
     return (
-      <CanvasC>
+      <>
           <AddBtn onClick={handleShow}>
               <AddBtn.Plus/>
           </AddBtn>
@@ -25,14 +25,14 @@ export default function AddCanvas({component, componentTitle}) {
          {component}
           </Offcanvas.Body>
         </Offcanvas>
-      </CanvasC>
+      </>
     );
   }
   return (
-    <>
+    <CanvasC>
       {['end'].map((placement, idx) => (
         <OffCanvasExample  key={idx} placement={placement} name={placement} />
       ))}
-    </>
+    </CanvasC>
   );
 }
